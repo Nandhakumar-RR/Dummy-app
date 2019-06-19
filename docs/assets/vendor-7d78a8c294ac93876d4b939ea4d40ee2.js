@@ -4345,6 +4345,9 @@ for(var t in e.presenceSet=Object.create(null),this.presenceSet)e.presenceSet[t]
 return e.list=this.toArray(),e.size=this.size,e},e}(),e.default=t}),define("contacts/routes",["exports","ember-engines/routes"],function(e,t){"use strict"
 Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
 var n=(0,t.default)(function(){this.route("list",{path:"/"},function(){this.route("details",{path:"/details"})})})
+e.default=n}),define("customers/routes",["exports","ember-engines/routes"],function(e,t){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
+var n=(0,t.default)(function(){this.route("list",{path:"/"},function(){this.route("details",{path:"/details"})})})
 e.default=n}),define("ember-ajax/-private/promise",["exports"],function(e){"use strict"
 function t(e){return(t="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function n(e,t){for(var n=0;n<t.length;n++){var r=t[n]
 r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}function r(e,n){return!n||"object"!==t(n)&&"function"!=typeof n?function(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called")
@@ -4540,12 +4543,12 @@ this.__cache[e][t]=void 0},_setInCache:function(e,t,n){return this.__cache[e][t]
 Ember.assert("Asset manifest does not list any available bundles.",Object.keys(t).length)
 var n=t[e]
 return Ember.assert('No bundle with name "'+e+'" exists in the asset manifest.',n),n},_getAssetLoader:function(e){var t=this.__assetLoaders[e]
-return Ember.assert('No loader for assets of type "'+e+'" defined.',t),t},_initAssetLoaders:function(){this.__assetLoaders={},this.defineLoader("js",r.default),this.defineLoader("css",i.default)},__assetLoaders:void 0})}),define("ember-cli-app-version/initializer-factory",["exports"],function(e){"use strict"
+return Ember.assert('No loader for assets of type "'+e+'" defined.',t),t},_initAssetLoaders:function(){this.__assetLoaders={},this.defineLoader("js",r.default),this.defineLoader("css",i.default)},__assetLoaders:void 0})})
+define("ember-cli-app-version/initializer-factory",["exports"],function(e){"use strict"
 Object.defineProperty(e,"__esModule",{value:!0}),e.default=function(e,n){var r=!1
 return function(){if(!r&&e&&n){var i=Ember.String.classify(e)
 t.register(i,n),r=!0}}}
-var t=Ember.libraries})
-define("ember-cli-app-version/utils/regexp",["exports"],function(e){"use strict"
+var t=Ember.libraries}),define("ember-cli-app-version/utils/regexp",["exports"],function(e){"use strict"
 Object.defineProperty(e,"__esModule",{value:!0})
 e.versionRegExp=/\d+[.]\d+[.]\d+/,e.versionExtendedRegExp=/\d+[.]\d+[.]\d+-[a-z]*([.]\d+)?/,e.shaRegExp=/[a-z\d]{8}$/}),define("ember-data/-private",["exports","ember-inflector","@ember/ordered-set","ember-data/version"],function(e,t,n,r){"use strict"
 n=n&&n.hasOwnProperty("default")?n.default:n,r=r&&r.hasOwnProperty("default")?r.default:r
@@ -5464,13 +5467,13 @@ var a=o[n][r]
 return a||(a=this._engineIsLoaded(n)?Ember.RSVP.resolve():this._assetLoader.loadBundle(n).then(function(){return t._registerEngine(n)},function(e){throw o[n][r]=void 0,e}),o[n][r]=a.then(function(){return t._constructEngineInstance({name:n,instanceId:r,mountPoint:i})}))},_constructEngineInstance:function(e){var t=e.name,n=e.instanceId,r=e.mountPoint,i=Ember.getOwner(this),o=this._engineInstances
 o[t]||(o[t]=Object.create(null))
 var a=i.buildChildEngineInstance(t,{routable:!0,mountPoint:r})
-return o[t][n]=a,a.boot().then(function(){return a})}})}),define("ember-engines/components/link-to-component",["exports"],function(e){"use strict"
+return o[t][n]=a,a.boot().then(function(){return a})}})})
+define("ember-engines/components/link-to-component",["exports"],function(e){"use strict"
 Object.defineProperty(e,"__esModule",{value:!0}),e.default=Ember.LinkComponent.extend({didReceiveAttrs:function(){this._super.apply(this,arguments)
 var e=Ember.getOwner(this)
 e.mountPoint&&(this._prefixProperty(e.mountPoint,"targetRouteName"),null!==Ember.get(this,"current-when")&&this._prefixProperty(e.mountPoint,"current-when"))},_prefixProperty:function(e,t){var n=this,r=Ember.get(this,t)
 if("string"===Ember.typeOf(r)){var i=void 0
-i="current-when"===t?(i=(i=r.split(" ")).map(function(t){return n._namespacePropertyValue(e,t)})).join(" "):this._namespacePropertyValue(e,r),Ember.set(this,t,i)}},_namespacePropertyValue:function(e,t){return"application"===t?e:e+"."+t}})})
-define("ember-engines/components/link-to-external-component",["exports"],function(e){"use strict"
+i="current-when"===t?(i=(i=r.split(" ")).map(function(t){return n._namespacePropertyValue(e,t)})).join(" "):this._namespacePropertyValue(e,r),Ember.set(this,t,i)}},_namespacePropertyValue:function(e,t){return"application"===t?e:e+"."+t}})}),define("ember-engines/components/link-to-external-component",["exports"],function(e){"use strict"
 Object.defineProperty(e,"__esModule",{value:!0}),e.default=Ember.LinkComponent.extend({didReceiveAttrs:function(){this._super.apply(this,arguments)
 var e=Ember.getOwner(this)
 if(e.mountPoint){var t=Ember.get(this,"targetRouteName"),n=e._getExternalRoute(t)
