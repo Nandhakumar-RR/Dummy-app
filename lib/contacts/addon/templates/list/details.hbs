@@ -1,0 +1,8 @@
+<div>Contact Phonenumber</div>
+<ul>
+  {{#each model as |contacts|}}
+    <li>
+      {{contacts.name}}-{{contacts.mobile}}
+    </li>
+  {{/each}}
+</ul>

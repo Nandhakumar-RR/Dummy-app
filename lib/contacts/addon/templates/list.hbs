@@ -1,0 +1,13 @@
+<div>Contacts</div>
+<ul>
+  {{#each model as |contacts|}}
+    <li>
+      {{#link-to "list.details"}}
+        {{contacts.name}}
+      {{/link-to}}
+    </li>
+  {{/each}}
+</ul>
+__________________________
+
+{{outlet}}
