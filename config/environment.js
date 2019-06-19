@@ -4,7 +4,7 @@ module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'dummy-app',
     environment,
-    rootURL: '/',
+    rootURL: '/prefetch-issue/',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
